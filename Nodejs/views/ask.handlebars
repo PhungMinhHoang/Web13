@@ -1,14 +1,17 @@
 <h1>Hay hoi 1 cau j do</h1>
 <form action="/question/add" method="POST">
-    <textarea name="questionContent" id="qs" cols="30" rows="10" maxlength="200" ></textarea>
+    <textarea name="questionContent" id="question" cols="30" rows="10" maxlength="200"></textarea>
 
-    <p id="count">con 200/200 ky tu</p>
+    <p>con
+        <span id="remain">200</span>/200 ky tu</p>
 
-    <script type="text/javascript">
-        $("#qs").on("keyup change", function () {
-            $("#count").html(`còn ${200 - $(this).val().length}/200 ký tự`);
-        });
 
-    </script>
     <button type="submit">Gui</button>
 </form>
+
+<script>
+    let char = 200;
+    document.getElementById("question").addEventListener("input", function () {
+        document.getElementById("remain").innerText = char - document.getElementById("question").value.length;
+    });
+</script>
