@@ -40,9 +40,21 @@ $(document).ready(function () {
             if (check == 1) Search(nextPage);
         }
     });
-});
-$(document).ready(function (){
-    $("#btnSearch").click(function(){
+
+    $("#btnSearch").click(function () {
         $("#result-list").empty();
-    });  
+    });
 });
+
+function Load() {
+    $("#result-list").empty();
+    setTimeout(function(){
+        Search(nextPage)
+    },1000)
+
+} 
+// function Load() {
+//     $("#result-list").empty();
+//     setTimeout(Search(nextPage),1000)
+
+// } 
